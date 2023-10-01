@@ -1,0 +1,17 @@
+# Build
+dist/
+
+# Node
+node_modules/
+
+server/reports
+server/bannedIPs.json
+
+# IDE garbage
+.idea
+.DS_Store
+.vscode
+
+# try to prevent chpster moments from happening
+*.desktop
+*.css
