@@ -1,0 +1,35 @@
+@import "./palette.scss";
+
+@import "./utils/scrollbar.scss";
+@import "./utils/buttons.scss";
+@import "./utils/inputs.scss";
+@import "./utils/fonts.scss";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body, p, input, button, select {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+
+    color: #ffffff;
+}
+
+::placeholder {
+    font-family: "Inter", sans-serif;
+}
+
+a, a:visited {
+    color: $blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
