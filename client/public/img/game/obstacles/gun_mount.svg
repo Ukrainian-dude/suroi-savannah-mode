@@ -7,7 +7,7 @@
    viewBox="0 0 58.101176 19.68209"
    version="1.1"
    id="svg29172"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    sodipodi:docname="gun_mount.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,17 +24,67 @@
      inkscape:document-units="px"
      showgrid="false"
      units="px"
-     inkscape:zoom="4.3893395"
-     inkscape:cx="60.145724"
-     inkscape:cy="-15.264256"
-     inkscape:window-width="2560"
-     inkscape:window-height="1372"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="6.2074634"
+     inkscape:cx="103.82663"
+     inkscape:cy="29.400093"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
   <defs
-     id="defs29169" />
+     id="defs29169">
+    <linearGradient
+       x1="149.88675"
+       y1="179.12709"
+       x2="206.19997"
+       y2="179.12709"
+       gradientUnits="userSpaceOnUse"
+       id="color-1">
+      <stop
+         offset="0"
+         stop-color="#d89200"
+         id="stop2" />
+      <stop
+         offset="1"
+         stop-color="#ffd852"
+         id="stop4" />
+    </linearGradient>
+    <radialGradient
+       cx="233.49757"
+       cy="179.54852"
+       r="32.527519"
+       gradientUnits="userSpaceOnUse"
+       id="color-2">
+      <stop
+         offset="0"
+         stop-color="#ffd852"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#d89200"
+         id="stop9" />
+    </radialGradient>
+    <linearGradient
+       x1="270.29364"
+       y1="179.44923"
+       x2="310.86774"
+       y2="179.44923"
+       gradientUnits="userSpaceOnUse"
+       id="color-3">
+      <stop
+         offset="0"
+         stop-color="#ffd852"
+         id="stop12" />
+      <stop
+         offset="1"
+         stop-color="#d89200"
+         id="stop14" />
+    </linearGradient>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"

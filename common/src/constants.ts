@@ -1,11 +1,10 @@
 export enum ObjectCategory {
     Player,
     Obstacle,
+    Explosion,
     DeathMarker,
     Loot,
     Building,
-    Decal,
-    Explosion,
     Emote
 }
 
@@ -103,23 +102,4 @@ export const GRID_SIZE = 16;
 
 export const PLAYER_RADIUS = 2.25;
 
-export const DEFAULT_USERNAME = "Player";
 export const ALLOW_NON_ASCII_USERNAME_CHARS = false;
-
-export enum zIndexes {
-    Ground,
-    DeadObstacles,
-    Decals,
-    DeathMarkers,
-    ObstaclesLayer1,
-    Loot,
-    ObstaclesLayer2,
-    Bullets,
-    Players,
-    ObstaclesLayer3, // bushes, tables etc
-    ObstaclesLayer4, // trees
-    BuildingsCeiling,
-    ObstaclesLayer5, // obstacles that should show on top of ceilings
-    Emotes,
-    Gas
-}

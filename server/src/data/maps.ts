@@ -47,35 +47,35 @@ interface MapDefinition {
 
 export const Maps: Record<string, MapDefinition> = {
     main: {
-        width: 1024,
-        height: 1024,
+        width: 888,
+        height: 888,
         buildings: {
-            refinery: 1,
-            warehouse: 4,
-            small_house: 5,
-            porta_potty: 10
+            refinery: 0,
+            warehouse: 3,
+            house: 0,
+            porta_potty: 6,
+			hunting_perch: 11	,
+			Kopje: 3
         },
         obstacles: {
-            oil_tank: 6,
-            regular_crate: 155,
-            oak_tree: 143,
-            rock: 142,
-            bush: 87,
-            blueberry_bush: 20,
-            barrel: 70,
-            super_barrel: 20,
-            birch_tree: 18,
-            pine_tree: 14,
+            regular_crate: 65,
+            oak_tree: 60,
+            pine_tree: 0,
+            birch_tree: 0,
+            rock: 100,
+            big_bush: 50,
+			bush: 30,
+            blueberry_bush: 0,
+            barrel: 50,
+            super_barrel: 16,
             melee_crate: 1,
-            gold_rock: 1,
-            flint_stone: 1
+            gold_rock: 2,
+			big_treem: 10,
+            flint_stone: 1,
+			big_rockm: 7,
+			savannahbarrel: 50
         },
         specialObstacles: {
-            oil_tank: {
-                count: 3,
-                radius: 200,
-                squareRadius: true
-            },
             aegis_crate: {
                 min: 3,
                 max: 4
@@ -89,12 +89,12 @@ export const Maps: Record<string, MapDefinition> = {
             ground_loot: 40
         },
         places: [
-            { name: "Banana", position: v(0.14, 0.12) },
-            { name: "Takedown", position: v(0.14, 0.88) },
-            { name: "Lavlandet", position: v(0.88, 0.12) },
-            { name: "Noskin Narrows", position: v(0.82, 0.88) },
-            { name: "Mt. Sanger", position: v(0.5, 0.3) },
-            { name: "Deepwood", position: v(0.5, 0.7) }
+            { name: "Solemm Scavaging", position: v(0.14, 0.12) },
+            { name: "Takedown Turf", position: v(0.14, 0.88) },
+            { name: "Washed Windwalk", position: v(0.88, 0.12) },
+            { name: "Martydom Mayhem", position: v(0.82, 0.88) },
+            { name: "Closer Cleves", position: v(0.5, 0.3) },
+            { name: "Spongebob", position: v(0.5, 0.7) }
         ]
     },
     debug: {
@@ -246,11 +246,11 @@ export const Maps: Record<string, MapDefinition> = {
             map.generateBuilding(ObjectType.fromString(ObjectCategory.Building, "refinery"), v(this.width / 2, this.height / 2), 0);
         }
     },
-    small_house: {
-        width: 512,
-        height: 512,
+    singleObstacle: {
+        width: 128,
+        height: 128,
         genCallback(map) {
-            map.generateBuilding(ObjectType.fromString(ObjectCategory.Building, "small_house"), v(this.width / 2, this.height / 2), 0);
+            map.generateObstacle("gold_rock", v(64, 64));
         }
     }
 };

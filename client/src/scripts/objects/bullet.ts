@@ -4,7 +4,7 @@ import { ObjectCategory } from "../../../../common/src/constants";
 import { SuroiSprite, toPixiCoords } from "../utils/pixi";
 import { distance } from "../../../../common/src/utils/math";
 import { Obstacle } from "./obstacle";
-import { BULLET_COLORS, PIXI_SCALE } from "../utils/constants";
+import { PIXI_SCALE } from "../utils/constants";
 import { BaseBullet, type BulletOptions } from "../../../../common/src/utils/baseBullet";
 import { Player } from "./player";
 
@@ -12,7 +12,6 @@ export class Bullet extends BaseBullet {
     readonly game: Game;
     readonly image: SuroiSprite;
     readonly maxLength: number;
-    readonly tracerLength: number;
     trailReachedMaxLength = false;
     trailTicks = 0;
 
@@ -21,33 +20,20 @@ export class Bullet extends BaseBullet {
 
         this.game = game;
 
-        this.image = new SuroiSprite(this.definition.tracerImage ?? "base_trail")
+        let key: string;
+        if (this.source.category === ObjectCategory.Loot) key = this.source.definition.ammoType;
+        else key = "shrapnel";
+        this.image = new SuroiSprite(`${key}_trail`)
             .setRotation(this.rotation - Math.PI / 2)
             .setVPos(toPixiCoords(this.position));
 
-        this.tracerLength = this.definition.tracerLength ?? 1;
-
-        this.maxLength = this.image.width * this.tracerLength;
+        this.maxLength = this.image.width;
 
         this.image.scale.set(0, this.definition.tracerWidth ?? 1);
 
         this.image.anchor.set(1, 0.5);
 
         this.image.alpha = (this.definition.tracerOpacity ?? 1) / (this.reflectionCount + 1);
-
-        let tint = 0xffffff;
-
-        const source = this.source;
-        if (source.category === ObjectCategory.Loot &&
-            BULLET_COLORS[source.definition.ammoType]) {
-            tint = BULLET_COLORS[source.definition.ammoType];
-        }
-
-        if (this.definition.shrapnel) tint = BULLET_COLORS.shrapnel;
-
-        if (this.definition.tracerColor) tint = this.definition.tracerColor;
-
-        this.image.tint = tint;
 
         this.game.bulletsContainer.addChild(this.image);
     }
@@ -84,7 +70,7 @@ export class Bullet extends BaseBullet {
 
         if (length === this.maxLength) this.trailReachedMaxLength = true;
 
-        this.image.width = length;
+        this.image.scale.x = length / this.maxLength;
 
         this.image.setVPos(toPixiCoords(this.position));
 

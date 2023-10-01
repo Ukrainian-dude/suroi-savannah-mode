@@ -15,10 +15,6 @@ export class ObjectDefinitions<T extends ObjectDefinition = ObjectDefinition> {
             this.idStringToNumber[definitions[i].idString] = i;
         }
     }
-
-    getByIdString(id: string): T {
-        return this.definitions[this.idStringToNumber[id]];
-    }
 }
 
 export interface ObjectDefinition {
@@ -62,8 +58,6 @@ export interface BulletDefinition {
     readonly tracerOpacity?: number
     readonly tracerWidth?: number
     readonly tracerLength?: number
-    readonly tracerColor?: number
-    readonly tracerImage?: string
     readonly variance?: number
     readonly shrapnel?: boolean
 }

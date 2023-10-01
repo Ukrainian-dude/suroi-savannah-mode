@@ -33,11 +33,11 @@ export async function loadAtlases(): Promise<void> {
     }
     for (const building of Buildings.definitions) {
         for (const image of building.floorImages) {
-            await loadImage(image.key, require(`/public/img/buildings/${image.key}.svg`));
+            await loadImage(image.key, require(`/public/img/buildings/${image.key}.png`));
         }
         for (const image of building.ceilingImages) {
-            await loadImage(image.key, require(`/public/img/buildings/${image.key}.svg`));
-            if (image.residue) await loadImage(image.residue, require(`/public/img/buildings/${image.residue}.svg`));
+            await loadImage(image.key, require(`/public/img/buildings/${image.key}.png`));
+            if (image.residue) await loadImage(image.residue, require(`/public/img/buildings/${image.residue}.png`));
         }
     }
 }
@@ -59,11 +59,6 @@ export class SuroiSprite extends Sprite {
     setFrame(frame: string): SuroiSprite {
         if (!textures[frame]) frame = "_missing_texture.svg";
         this.texture = textures[frame];
-        return this;
-    }
-
-    setAnchor(anchor: Vector): SuroiSprite {
-        this.anchor.copyFrom(anchor);
         return this;
     }
 
@@ -92,8 +87,8 @@ export class SuroiSprite extends Sprite {
         return this;
     }
 
-    setZIndex(zIndex: number): SuroiSprite {
-        this.zIndex = zIndex;
+    setDepth(depth: number): SuroiSprite {
+        this.zIndex = depth;
         return this;
     }
 

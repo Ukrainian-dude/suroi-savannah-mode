@@ -177,7 +177,7 @@ export class PlayerManager {
 
     constructor(game: Game) {
         this.game = game;
-
+		
         for (const item of [...HealingItems, ...Ammos, ...Scopes]) {
             let amount = 0;
             if (item.itemType === ItemType.Ammo && item.ephemeral) {
@@ -187,7 +187,7 @@ export class PlayerManager {
                 amount = 1;
             }
             this.items[item.idString] = amount;
-        }
+        }		
     }
 
     private _updateActiveWeaponUi(): void {

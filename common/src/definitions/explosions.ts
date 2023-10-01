@@ -13,14 +13,13 @@ export interface ExplosionDefinition extends ObjectDefinition {
     }
     readonly animation: {
         readonly duration: number
-        readonly tint: number
+        readonly frame: string
         readonly scale: number
     }
     readonly sound?: string // TODO: move the barrel and super barrel destroy sounds to explosion sounds
 
     readonly shrapnelCount: number
     readonly ballistics: BulletDefinition
-    readonly decal?: string
 }
 
 export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
@@ -40,7 +39,7 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
             },
             animation: {
                 duration: 1000,
-                tint: 0x91140b,
+                frame: "barrel_explosion",
                 scale: 1.5
             },
             shrapnelCount: 10,
@@ -68,7 +67,7 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
             },
             animation: {
                 duration: 1000,
-                tint: 0xff5500,
+                frame: "barrel_explosion",
                 scale: 1.5
             },
             shrapnelCount: 10,
@@ -96,7 +95,7 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
             },
             animation: {
                 duration: 1500,
-                tint: 0xff0000,
+                frame: "barrel_explosion",
                 scale: 2.5
             },
             shrapnelCount: 20,
@@ -124,7 +123,7 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
             },
             animation: {
                 duration: 1500,
-                tint: 0x91140b,
+                frame: "barrel_explosion",
                 scale: 2.5
             },
             shrapnelCount: 25,
@@ -152,7 +151,7 @@ export const Explosions = new ObjectDefinitions<ExplosionDefinition>(
             },
             animation: {
                 duration: 1500,
-                tint: 0xff0000,
+                frame: "barrel_explosion",
                 scale: 5
             },
             shrapnelCount: 50,

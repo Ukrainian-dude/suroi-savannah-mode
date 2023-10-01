@@ -5,8 +5,31 @@
    width="71.4375mm"
    version="1.1"
    id="svg1"
+   sodipodi:docname="porta_potty_back_wall.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.1962963"
+     inkscape:cx="128.64932"
+     inkscape:cy="8.3713471"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1" />
   <path
@@ -18,4 +41,43 @@
      stroke-width="1.45106"
      id="path1"
      style="stroke-width:2.11666;stroke-dasharray:none" />
+  <path
+     style="fill:#2b1100;stroke:#6a8e2a;stroke-width:0.272158;stroke-opacity:0.984314"
+     d="M 2.1772639,38.033657 C 1.5557559,37.72318 1.0095451,37.132175 0.60558985,36.333092 L -0.01353126,35.108381 0.06127387,18.902749 C 0.14442671,0.88868674 0.04235532,1.8547131 1.9879329,0.66841924 2.8468414,0.14470959 4.501463,0.13810102 135.01816,0.13709635 l 132.16049,-0.001017 0.92476,0.61778048 c 1.96097,1.31001207 1.89376,0.61166357 1.81331,18.84151517 l -0.0721,16.32948 -0.65282,0.915305 c -0.35904,0.503419 -1.05932,1.085157 -1.55616,1.292751 -0.76602,0.32006 -20.94171,0.377379 -132.7046,0.377023 C 9.995819,38.509531 3.0801949,38.484721 2.1772639,38.033657 Z M 261.81599,19.323217 V 8.0286607 H 134.99036 8.1647397 V 19.323217 30.617774 H 134.99036 261.81599 Z"
+     id="path4"
+     transform="scale(0.26458333)" />
+  <path
+     style="fill:#552200;stroke:#6a8e2a;stroke-width:0.272158;stroke-opacity:0.984314"
+     d="M 8.4368977,19.459296 V 8.3008187 H 134.99036 261.54383 V 19.459296 30.617774 H 134.99036 8.4368977 Z"
+     id="path5"
+     transform="scale(0.26458333)" />
+  <rect
+     style="fill:#552200;stroke:#6a8e2a;stroke-width:0.264583;stroke-opacity:0.984314"
+     id="rect5"
+     width="67.246506"
+     height="5.9748397"
+     x="2.1683693"
+     y="2.171988"
+     ry="0.43205082" />
+  <path
+     style="fill:#552200;stroke:#6a8e2a;stroke-width:0.00425247;stroke-opacity:0.984314"
+     d="M 123.61076,8.7856002 V 7.7075994 h 4.83931 4.83931 V 8.7856002 9.863601 h -4.83931 -4.83931 z"
+     id="path6"
+     transform="scale(0.26458333)" />
+  <rect
+     style="fill:#552200;stroke:#6a8e2a;stroke-width:0.264583;stroke-opacity:0;fill-opacity:1"
+     id="rect7"
+     width="67.399925"
+     height="6.2647367"
+     x="2.016237"
+     y="2.016237"
+     ry="0.43205082" />
+  <rect
+     style="fill:#552200;fill-opacity:1;stroke:#6a8e2a;stroke-width:0.264583;stroke-opacity:0"
+     id="rect8"
+     width="4.5230298"
+     height="6.2737374"
+     x="65.257675"
+     y="2.0162373"
+     ry="0.43205082" />
 </svg>

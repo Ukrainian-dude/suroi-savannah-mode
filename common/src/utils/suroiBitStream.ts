@@ -1,9 +1,10 @@
 import { BitStream } from "@damienvesper/bit-buffer";
 
 import { type Vector } from "./vector";
-import { ObjectType, ObjectDefinitionsList } from "./objectType";
+import { ObjectType } from "./objectType";
 
 import { type ObjectDefinition, type ObjectDefinitions } from "./objectDefinitions";
+import { ObjectDefinitionsList } from "./objectDefinitionsList";
 
 import {
     MAX_OBJECT_SCALE,

@@ -28,14 +28,14 @@ export const HealingItems: HealingItemDefinition[] = [
         restoreAmount: 100,
         useTime: 6,
         useText: "Using"
-    },
+    },	
     {
         idString: "cola",
         name: "Cola",
         itemType: ItemType.Healing,
         healType: HealType.Adrenaline,
         restoreAmount: 25,
-        useTime: 3,
+        useTime: 3, 
         useText: "Drinking"
     },
     {

@@ -1,18 +1,17 @@
 import type { Game } from "../game";
 import { GameObject } from "../types/gameObject";
 
-import { DEFAULT_USERNAME, type ObjectCategory, zIndexes } from "../../../../common/src/constants";
-import { type ObjectType } from "../../../../common/src/utils/objectType";
+import { ObjectCategory } from "../../../../common/src/constants";
+import { ObjectType } from "../../../../common/src/utils/objectType";
 import { SuroiSprite, toPixiCoords } from "../utils/pixi";
 
 import { type Container, Text } from "pixi.js";
 import { Tween } from "../utils/tween";
 import { type Vector } from "../../../../common/src/utils/vector";
 import { type ObjectsNetData } from "../../../../common/src/utils/objectsSerializations";
-import { localStorageInstance } from "../utils/localStorageHandler";
 
 export class DeathMarker extends GameObject {
-    declare readonly type: ObjectType<ObjectCategory.DeathMarker>;
+    override readonly type = ObjectType.categoryOnly(ObjectCategory.DeathMarker);
 
     playerName!: string;
     nameColor = "#dcdcdc";
@@ -23,11 +22,11 @@ export class DeathMarker extends GameObject {
     scaleAnim?: Tween<Vector>;
     alphaAnim?: Tween<Container>;
 
-    constructor(game: Game, type: ObjectType, id: number) {
+    constructor(game: Game, type: ObjectType<ObjectCategory.DeathMarker>, id: number) {
         super(game, type, id);
 
         this.image = new SuroiSprite("death_marker");
-        this.playerNameText = new Text(localStorageInstance.config.anonymousPlayers ? DEFAULT_USERNAME : "",
+        this.playerNameText = new Text("",
             {
                 fontSize: 36,
                 fontFamily: "Inter",
@@ -40,7 +39,7 @@ export class DeathMarker extends GameObject {
         this.playerNameText.anchor.set(0.5);
         this.container.addChild(this.image, this.playerNameText);
 
-        this.container.zIndex = zIndexes.DeathMarkers;
+        this.container.zIndex = 0;
     }
 
     override updateFromData(data: ObjectsNetData[ObjectCategory.DeathMarker]): void {

@@ -15,6 +15,12 @@ export const Skins: SkinDefinition[] = [
         roleRequired: "hasanger"
     },
     {
+        idString: "ukraines",
+        name: "Ukraines swag",
+        itemType: ItemType.Skin,
+		roleRequired: "dude"
+    },	
+    {
         idString: "leia",
         name: "Leia",
         itemType: ItemType.Skin,
@@ -82,6 +88,12 @@ export const Skins: SkinDefinition[] = [
         itemType: ItemType.Skin,
         notInLoadout: true
     },
+    {
+        idString: "Mansion",
+        name: "Casanova Silks",
+        itemType: ItemType.Skin,
+        notInLoadout: true
+    },	
     {
         idString: "tomato_skin",
         name: "Tomato",

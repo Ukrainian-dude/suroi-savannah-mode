@@ -6,11 +6,10 @@ import {
     AnimationType,
     ObjectCategory,
     PLAYER_RADIUS,
-    PlayerActions,
-    zIndexes
+    PlayerActions
 } from "../../../../common/src/constants";
 
-import { v, vAdd, vAdd2, vClone, type Vector, vRotate } from "../../../../common/src/utils/vector";
+import { vClone, vAdd, v, vRotate, vAdd2, type Vector } from "../../../../common/src/utils/vector";
 import { random, randomBoolean, randomFloat, randomVector } from "../../../../common/src/utils/random";
 import { angleBetween, distanceSquared, velFromAngle } from "../../../../common/src/utils/math";
 import { ObjectType } from "../../../../common/src/utils/objectType";
@@ -26,19 +25,17 @@ import { Backpacks } from "../../../../common/src/definitions/backpacks";
 import { type ArmorDefinition } from "../../../../common/src/definitions/armors";
 import { CircleHitbox } from "../../../../common/src/utils/hitbox";
 import { type EmoteDefinition } from "../../../../common/src/definitions/emotes";
-import { drawHitbox, SuroiSprite, toPixiCoords } from "../utils/pixi";
+import { SuroiSprite, drawHitbox, toPixiCoords } from "../utils/pixi";
 import { Container } from "pixi.js";
 import { type Sound } from "../utils/soundManager";
-import { type HealingItemDefinition, HealType } from "../../../../common/src/definitions/healingItems";
+import { HealType, type HealingItemDefinition } from "../../../../common/src/definitions/healingItems";
 import { Obstacle } from "./obstacle";
 import { GameObject } from "../types/gameObject";
 import { EaseFunctions, Tween } from "../utils/tween";
 import { type ObjectsNetData } from "../../../../common/src/utils/objectsSerializations";
 import { type ParticleEmitter } from "./particles";
 
-export class Player extends GameObject {
-    declare readonly type: ObjectType<ObjectCategory.Player>;
-
+export class Player extends GameObject<ObjectCategory.Player> {
     name!: string;
 
     activeItem = ObjectType.fromString<ObjectCategory.Loot, ItemDefinition>(ObjectCategory.Loot, "fists");
@@ -109,10 +106,10 @@ export class Player extends GameObject {
             body: new SuroiSprite(),
             leftFist: new SuroiSprite(),
             rightFist: new SuroiSprite(),
-            backpack: new SuroiSprite().setPos(-55, 0).setVisible(false).setZIndex(5),
-            helmet: new SuroiSprite().setPos(-5, 0).setVisible(false).setZIndex(6),
+            backpack: new SuroiSprite().setPos(-55, 0).setVisible(false).setDepth(5),
+            helmet: new SuroiSprite().setPos(-5, 0).setVisible(false).setDepth(6),
             weapon: new SuroiSprite(),
-            muzzleFlash: new SuroiSprite("muzzle_flash").setVisible(false).setZIndex(7).setAnchor(v(0, 0.5)),
+            muzzleFlash: new SuroiSprite("muzzle_flash").setVisible(false).setDepth(7),
             emoteBackground: new SuroiSprite("emote_background").setPos(0, 0),
             emoteImage: new SuroiSprite().setPos(0, 0)
         };
@@ -133,7 +130,7 @@ export class Player extends GameObject {
         this.emoteContainer = new Container();
         this.game.camera.container.addChild(this.emoteContainer);
         this.emoteContainer.addChild(this.images.emoteBackground, this.images.emoteImage);
-        this.emoteContainer.zIndex = zIndexes.Emotes;
+        this.emoteContainer.zIndex = 10;
         this.emoteContainer.visible = false;
 
         this.updateFistsPosition(false);
@@ -151,7 +148,7 @@ export class Player extends GameObject {
                     frames: `${frame}_particle`,
                     position: this.hitbox.randomPoint(),
                     lifeTime: 1000,
-                    zIndex: zIndexes.Players,
+                    depth: 5,
                     rotation: 0,
                     alpha: {
                         start: 1,
@@ -172,42 +169,10 @@ export class Player extends GameObject {
         if (!this.destroyed) this.emoteContainer.position = vAdd2(this.container.position, 0, -175);
     }
 
-    spawnCasingParticles(): void {
-        const weaponDef = this.activeItem.definition as GunDefinition;
-        const initialRotation = this.rotation + Math.PI / 2;
-        const spinAmount = randomFloat(Math.PI / 2, Math.PI);
-        if (weaponDef.casingParticles !== undefined) {
-            this.game.particleManager.spawnParticle({
-                frames: `${weaponDef.ammoType}_particle`,
-                zIndex: zIndexes.Players,
-                position: vAdd(this.position, vRotate(weaponDef.casingParticles.position, this.rotation)),
-                lifeTime: 400,
-                scale: {
-                    start: 0.8,
-                    end: 0.4
-                },
-                alpha: {
-                    start: 1,
-                    end: 0,
-                    ease: EaseFunctions.sextIn
-                },
-                rotation: {
-                    start: initialRotation,
-                    end: initialRotation + spinAmount
-                },
-                speed: vRotate(vAdd2(randomVector(2, -5, 10, 15), -(spinAmount / 4), 0), this.rotation)
-            });
-        }
-    }
-
     override updateFromData(data: ObjectsNetData[ObjectCategory.Player]): void {
         // Position and rotation
         if (this.position !== undefined) this.oldPosition = vClone(this.position);
         this.position = data.position;
-
-        if (localStorageInstance.config.showCoordinates) {
-            $("#coordinates-hud").text(`X: ${Math.round(this.position.x * 100) / 100} Y: ${Math.round(this.position.y * 100) / 100}`);
-        }
 
         this.hitbox.position = this.position;
 
@@ -284,9 +249,7 @@ export class Player extends GameObject {
                         if (this.actionSound) this.game.soundManager.stop(this.actionSound);
                         break;
                     case PlayerActions.Reload: {
-                        const weaponDef = (this.activeItem.definition as GunDefinition);
                         actionName = "Reloading...";
-                        if (weaponDef.casingParticles?.spawnOnReload) this.spawnCasingParticles();
                         actionSoundName = `${this.activeItem.idString}_reload`;
                         actionTime = (this.activeItem.definition as GunDefinition).reloadTime;
                         break;
@@ -406,15 +369,15 @@ export class Player extends GameObject {
         }
 
         if (weaponDef.itemType === ItemType.Gun) {
-            this.images.leftFist.setZIndex(1);
-            this.images.rightFist.setZIndex(1);
-            this.images.weapon.setZIndex(2);
-            this.images.body.setZIndex(3);
+            this.images.leftFist.setDepth(1);
+            this.images.rightFist.setDepth(1);
+            this.images.weapon.setDepth(2);
+            this.images.body.setDepth(3);
         } else if (weaponDef.itemType === ItemType.Melee) {
-            this.images.leftFist.setZIndex(3);
-            this.images.rightFist.setZIndex(3);
-            this.images.body.setZIndex(2);
-            this.images.weapon.setZIndex(1);
+            this.images.leftFist.setDepth(3);
+            this.images.rightFist.setDepth(3);
+            this.images.body.setDepth(2);
+            this.images.weapon.setDepth(1);
         }
         this.container.sortChildren();
     }
@@ -593,7 +556,7 @@ export class Player extends GameObject {
 
                     if (!weaponDef.noMuzzleFlash) {
                         const muzzleFlash = this.images.muzzleFlash;
-                        muzzleFlash.x = weaponDef.length * PIXI_SCALE;
+                        muzzleFlash.x = 8 + weaponDef.length * PIXI_SCALE;
                         muzzleFlash.setVisible(true);
                         muzzleFlash.alpha = 0.95;
                         const scale = randomFloat(0.75, 1);
@@ -629,7 +592,30 @@ export class Player extends GameObject {
                         yoyo: true
                     });
 
-                    if (!weaponDef.casingParticles?.spawnOnReload) this.spawnCasingParticles();
+                    if (weaponDef.particles) {
+                        const initialRotation = this.rotation + Math.PI / 2;
+                        const spinAmount = randomFloat(Math.PI / 2, Math.PI);
+                        this.game.particleManager.spawnParticle({
+                            frames: `${weaponDef.ammoType}_particle`,
+                            depth: 3,
+                            position: vAdd(this.position, vRotate(weaponDef.particles.position, this.rotation)),
+                            lifeTime: 400,
+                            scale: {
+                                start: 0.8,
+                                end: 0.4
+                            },
+                            alpha: {
+                                start: 1,
+                                end: 0,
+                                ease: EaseFunctions.sextIn
+                            },
+                            rotation: {
+                                start: initialRotation,
+                                end: initialRotation + spinAmount
+                            },
+                            speed: vRotate(vAdd2(randomVector(2, -5, 10, 15), -(spinAmount / 4), 0), this.rotation)
+                        });
+                    }
                 }
                 break;
             }
@@ -645,7 +631,7 @@ export class Player extends GameObject {
 
         this.game.particleManager.spawnParticle({
             frames: "blood_particle",
-            zIndex: 4,
+            depth: 4,
             position,
             lifeTime: 1000,
             scale: {

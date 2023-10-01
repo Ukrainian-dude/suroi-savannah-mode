@@ -38,5 +38,11 @@ export const Scopes: ScopeDefinition[] = [
         name: "15x Scope",
         itemType: ItemType.Scope,
         zoomLevel: 178
-    }
+    },
+    {
+        idString: "30x_scope",
+        name: "30x Scope",
+        itemType: ItemType.Scope,
+        zoomLevel: 1000
+    },	
 ];

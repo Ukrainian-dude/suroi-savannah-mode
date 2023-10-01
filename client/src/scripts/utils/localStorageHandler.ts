@@ -37,30 +37,22 @@ export interface Config {
     rulesAcknowledged: boolean
     loadout: {
         skin: string
-        crosshair: string
         topEmote: string
         rightEmote: string
         bottomEmote: string
         leftEmote: string
     }
-    crosshairColor: string
-    crosshairSize: number
-    crosshairStrokeColor: string
-    crosshairStrokeSize: number
     scopeLooping: boolean
-    anonymousPlayers: boolean
     keybinds: KeybindActions
     masterVolume: number
     sfxVolume: number
     musicVolume: number
     muteAudio: boolean
-    oldMenuMusic: boolean
     language: string
-    region: string | undefined
+    region: string
     cameraShake: boolean
     showFPS: boolean
     showPing: boolean
-    showCoordinates: boolean
     clientSidePrediction: boolean
     textKillFeed: boolean
     rotationSmoothing: boolean
@@ -68,7 +60,6 @@ export interface Config {
     mobileControls: boolean
     minimapMinimized: boolean
     leaveWarning: boolean
-    hideRulesButton: boolean
     joystickSize: number
     joystickTransparency: number
     minimapTransparency: number
@@ -86,7 +77,6 @@ export const defaultConfig: Config = {
     rulesAcknowledged: false,
     loadout: {
         skin: "forest_camo",
-        crosshair: "default",
         topEmote: "happy_face",
         rightEmote: "thumbs_up",
         bottomEmote: "suroi_logo",
@@ -120,23 +110,16 @@ export const defaultConfig: Config = {
         toggleMiniMap: ["N", ""],
         emoteWheel: ["Mouse2", ""]
     },
-    crosshairColor: "#000000",
-    crosshairSize: 30,
-    crosshairStrokeColor: "#000000",
-    crosshairStrokeSize: 0,
     scopeLooping: false,
-    anonymousPlayers: false,
     masterVolume: 1,
     musicVolume: 1,
     sfxVolume: 1,
     muteAudio: false,
-    oldMenuMusic: false,
     language: "en",
-    region: undefined,
+    region: "na",
     cameraShake: true,
     showFPS: false,
     showPing: false,
-    showCoordinates: false,
     clientSidePrediction: true,
     textKillFeed: true,
     rotationSmoothing: true,
@@ -144,7 +127,6 @@ export const defaultConfig: Config = {
     mobileControls: true,
     minimapMinimized: false,
     leaveWarning: true,
-    hideRulesButton: false,
     joystickSize: 150,
     joystickTransparency: 0.8,
     minimapTransparency: 0.8,
@@ -220,7 +202,7 @@ if (config.configVersion !== defaultConfig.configVersion) {
                     if (typeof value === "string") {
                         target[key] = [value, ""];
                     } else {
-                        convertAllBinds(value, (target[key] = {}));
+                        convertAllBinds(value, target[key] = {});
                     }
                 }
 

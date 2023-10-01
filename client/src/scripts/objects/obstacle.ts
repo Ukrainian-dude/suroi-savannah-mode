@@ -1,7 +1,7 @@
 import type { Game } from "../game";
 import { GameObject } from "../types/gameObject";
 
-import { zIndexes, type ObjectCategory } from "../../../../common/src/constants";
+import type { ObjectCategory } from "../../../../common/src/constants";
 import type { ObjectType } from "../../../../common/src/utils/objectType";
 
 import type { ObstacleDefinition } from "../../../../common/src/definitions/obstacles";
@@ -16,9 +16,7 @@ import { EaseFunctions, Tween } from "../utils/tween";
 import { type Vector } from "../../../../common/src/utils/vector";
 import { type ObjectsNetData } from "../../../../common/src/utils/objectsSerializations";
 
-export class Obstacle extends GameObject {
-    declare readonly type: ObjectType<ObjectCategory.Obstacle, ObstacleDefinition>;
-
+export class Obstacle extends GameObject<ObjectCategory.Obstacle, ObstacleDefinition> {
     scale!: number;
 
     image: SuroiSprite;
@@ -44,7 +42,7 @@ export class Obstacle extends GameObject {
 
     particleFrames: string[] = [];
 
-    constructor(game: Game, type: ObjectType, id: number) {
+    constructor(game: Game, type: ObjectType<ObjectCategory.Obstacle, ObstacleDefinition>, id: number) {
         super(game, type, id);
 
         this.image = new SuroiSprite(); //.setAlpha(0.5);
@@ -148,7 +146,7 @@ export class Obstacle extends GameObject {
                 this.game.particleManager.spawnParticles(10, () => ({
                     frames: this.particleFrames,
                     position: this.hitbox.randomPoint(),
-                    zIndex: (definition.zIndex ?? zIndexes.ObstaclesLayer1) + 1,
+                    depth: (definition.depth ?? 0) + 1,
                     lifeTime: 1500,
                     rotation: {
                         start: randomRotation(),
@@ -164,11 +162,11 @@ export class Obstacle extends GameObject {
                         end: 0,
                         ease: EaseFunctions.sextIn
                     },
-                    speed: velFromAngle(randomRotation(), randomFloat(4, 9) * (definition.explosion ? 3 : 1))
+                    speed: velFromAngle(randomRotation(), randomFloat(1.5, 4) * (definition.explosion ? 3 : 1))
                 }));
             }
         }
-        this.container.zIndex = this.dead ? zIndexes.DeadObstacles : definition.zIndex ?? zIndexes.ObstaclesLayer1;
+        this.container.zIndex = this.dead ? 0 : definition.depth ?? 0;
 
         if (!this.isDoor) {
             this.hitbox = definition.hitbox.transform(this.position, this.scale, this.orientation);
@@ -187,6 +185,7 @@ export class Obstacle extends GameObject {
         this.image.setFrame(`${texture}`);
 
         this.container.rotation = this.rotation;
+        this.container.zIndex = this.dead ? 0 : definition.depth ?? 0;
 
         this.isNew = false;
 
@@ -209,7 +208,7 @@ export class Obstacle extends GameObject {
         this.game.particleManager.spawnParticle({
             frames: this.particleFrames,
             position,
-            zIndex: Math.max((this.type.definition.zIndex ?? zIndexes.Players) + 1, 4),
+            depth: Math.max((this.type.definition.depth ?? 0) + 1, 4),
             lifeTime: 600,
             scale: { start: 0.9, end: 0.2 },
             alpha: { start: 1, end: 0.65 },

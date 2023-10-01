@@ -5,8 +5,31 @@
    width="108.47916mm"
    version="1.1"
    id="svg4"
+   sodipodi:docname="porta_potty_toilet_paper_wall.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.4219515"
+     inkscape:cx="204.99998"
+     inkscape:cy="43.980751"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
   <defs
      id="defs4" />
   <g
@@ -45,4 +68,24 @@
        id="path4"
        style="stroke-width:4.79877;stroke-dasharray:none" />
   </g>
+  <path
+     style="fill:#2b1100;stroke-width:0.292231"
+     d="M 2.1345521,37.856761 C 0.04573308,36.583128 0.14611545,37.520575 0.14611545,19.28724 0.14611545,1.0539056 0.04573308,1.991352 2.1345521,0.71771826 3.0578218,0.15476514 5.3610721,0.1483002 204.99998,0.1483002 c 199.63892,0 201.94217,0.006465 202.86544,0.56941806 2.08881,1.27363374 1.98843,0.33618734 1.98843,18.56952174 0,18.233335 0.10038,17.295888 -1.98843,18.569521 -0.92327,0.562953 -3.22652,0.569417 -202.86544,0.569417 -199.6389079,0 -201.9421582,-0.0065 -202.8654279,-0.569417 z M 402.10973,19.28724 V 7.744119 H 204.99998 7.8902345 V 19.28724 30.830361 H 204.99998 402.10973 Z"
+     id="path5"
+     transform="scale(0.26458333)" />
+  <path
+     style="fill:#552200;stroke-width:0.292231"
+     d="M 8.1824654,19.28724 V 8.0363499 H 204.99998 401.8175 V 19.28724 30.53813 H 204.99998 8.1824654 Z"
+     id="path6"
+     transform="scale(0.26458333)" />
+  <path
+     style="fill:#803300;stroke-width:0.292231"
+     d="m 122.73631,59.688163 c -3.7e-4,-4.058357 -0.0871,-10.436297 -0.19279,-14.173199 l -0.19212,-6.794369 h 3.99179 3.99179 v 14.173199 14.173199 h -3.799 -3.799 z"
+     id="path7"
+     transform="scale(0.26458333)" />
+  <path
+     style="fill:#803300;stroke-width:0.292231"
+     d="M 73.934419,52.893794 V 38.720595 h 4.137907 4.137906 l -0.192117,6.794369 c -0.105664,3.736902 -0.192419,10.114842 -0.192789,14.173199 l -6.72e-4,7.37883 h -3.945117 -3.945118 z"
+     id="path8"
+     transform="scale(0.26458333)" />
 </svg>

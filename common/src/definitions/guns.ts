@@ -1,4 +1,4 @@
-import { type BulletDefinition, type ItemDefinition, ItemType } from "../utils/objectDefinitions";
+import { type ItemDefinition, ItemType, type BulletDefinition } from "../utils/objectDefinitions";
 import { v, type Vector } from "../utils/vector";
 import { FireMode } from "../constants";
 
@@ -38,9 +38,8 @@ export type GunDefinition = ItemDefinition & {
         readonly angle?: number
     }
 
-    readonly casingParticles?: {
+    readonly particles?: {
         readonly position: Vector
-        readonly spawnOnReload?: boolean
     }
 
     readonly noMuzzleFlash?: boolean
@@ -81,7 +80,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(90, 2) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         ballistics: {
@@ -114,7 +113,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(170, -1) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         ballistics: {
@@ -145,7 +144,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(103, -4) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.5)
         },
         capacity: 30,
@@ -182,7 +181,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(110, 1) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         singleReload: true,
@@ -218,7 +217,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(105, 0) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         singleReload: true,
@@ -226,8 +225,7 @@ export const Guns: GunDefinition[] = [
             damage: 10,
             obstacleMultiplier: 1,
             speed: 0.16,
-            maxDistance: 48,
-            tracerLength: 0.7
+            maxDistance: 48
         }
     },
     {
@@ -256,7 +254,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(100, 0) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.5)
         },
         ballistics: {
@@ -264,45 +262,7 @@ export const Guns: GunDefinition[] = [
             obstacleMultiplier: 0.5,
             speed: 0.12,
             maxDistance: 40,
-            tracerLength: 0.5
-        }
-    },
-    {
-        idString: "flues",
-        name: "Flues",
-        itemType: ItemType.Gun,
-        ammoType: "12g",
-        ammoSpawnAmount: 10,
-        capacity: 2,
-        reloadTime: 2.6,
-        singleReload: false,
-        fireDelay: 175,
-        switchDelay: 200,
-        speedMultiplier: 0.95,
-        recoilMultiplier: 0.8,
-        recoilDuration: 100,
-        fireMode: FireMode.Single,
-        bulletCount: 10,
-        shotSpread: 11,
-        moveSpread: 3,
-        canQuickswitch: true,
-        length: 5.7,
-        fists: {
-            left: v(95, 0),
-            right: v(50, -3),
-            animationDuration: 100
-        },
-        image: { position: v(70, 0) },
-        casingParticles: {
-            position: v(4, 0.6),
-            spawnOnReload: true
-        },
-        ballistics: {
-            damage: 10,
-            obstacleMultiplier: 1,
-            speed: 0.16,
-            maxDistance: 40,
-            tracerLength: 0.5
+            tracerLength: 0.7
         }
     },
     {
@@ -330,15 +290,88 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(105, 4) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         ballistics: {
-            damage: 64,
+            damage: 71,
             obstacleMultiplier: 1,
             speed: 0.33,
             maxDistance: 250,
             tracerWidth: 1.4,
+            tracerLength: 2.5
+        }
+    },
+	{
+        idString: "blr",
+        name: "BLR 81",
+        itemType: ItemType.Gun,
+        ammoType: "762mm",
+        ammoSpawnAmount: 20,
+        capacity: 3,
+        reloadTime: 1.7,
+        fireDelay: 900,
+        switchDelay: 900,
+        speedMultiplier: 0.9,
+        recoilMultiplier: 0.55,
+        recoilDuration: 850,
+        fireMode: FireMode.Single,
+        shotSpread: 0.8,
+        moveSpread: 0.5,
+        canQuickswitch: true,
+        length: 11,
+        fists: {
+            left: v(145, -1),
+            right: v(65, 0),
+            animationDuration: 100
+        },
+        image: { position: v(105, 4) },
+        particles: {
+            position: v(4, 0.6)
+        },
+        ballistics: {
+            damage: 61,
+            obstacleMultiplier: 1,
+            speed: 0.33,
+            maxDistance: 250,
+            tracerWidth: 1.4,
+            tracerLength: 2.5
+        }
+    },
+	{
+        idString: "svd",
+        name: "SVD-63",
+        itemType: ItemType.Gun,
+        ammoType: "762mm",
+        ammoSpawnAmount: 30,
+        capacity: 10,
+        reloadTime: 2.5,
+        singleReload: false,
+        fireDelay: 200,
+        switchDelay: 900,
+        speedMultiplier: 0.9,
+        recoilMultiplier: 0.7,
+        recoilDuration: 140,
+        fireMode: FireMode.Single,
+        shotSpread: 1.3,
+        moveSpread: 2.5,
+        canQuickswitch: true,
+        length: 11.6,
+        fists: {
+            left: v(65, 7),
+            right: v(145, 2),
+            animationDuration: 100
+        },
+        image: { position: v(105, 4) },
+        particles: {
+            position: v(4, 0.6)
+        },
+        ballistics: {
+            damage: 34,
+            obstacleMultiplier: 1,
+            speed: 0.30,
+            maxDistance: 250,
+            tracerWidth: 1.0,
             tracerLength: 2.5
         }
     },
@@ -348,7 +381,7 @@ export const Guns: GunDefinition[] = [
         itemType: ItemType.Gun,
         ammoType: "762mm",
         ammoSpawnAmount: 20,
-        capacity: 5,
+        capacity: 10,
         reloadTime: 2.6,
         fireDelay: 900,
         switchDelay: 900,
@@ -366,11 +399,11 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(125, 4) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         ballistics: {
-            damage: 78,
+            damage: 83,
             obstacleMultiplier: 1,
             speed: 0.4,
             maxDistance: 280,
@@ -399,7 +432,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(78, 0) },
-        casingParticles: {
+        particles: {
             position: v(3, 0.5)
         },
         capacity: 15,
@@ -432,7 +465,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(58, 0) },
-        casingParticles: {
+        particles: {
             position: v(3.5, 0.5)
         },
         capacity: 16,
@@ -467,7 +500,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(80, 0) },
-        casingParticles: {
+        particles: {
             position: v(5, 0.5)
         },
         ballistics: {
@@ -504,7 +537,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(100, 0) },
-        casingParticles: {
+        particles: {
             position: v(3.5, 0.5)
         },
         ballistics: {
@@ -540,7 +573,7 @@ export const Guns: GunDefinition[] = [
             right: v(65, 0),
             animationDuration: 100
         },
-        casingParticles: {
+        particles: {
             position: v(3.5, 0.6)
         },
         image: { position: v(88, 0) },
@@ -574,7 +607,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(100, 0) },
-        casingParticles: {
+        particles: {
             position: v(3.5, 0.5)
         },
         ballistics: {
@@ -592,7 +625,7 @@ export const Guns: GunDefinition[] = [
         ammoSpawnAmount: 80,
         capacity: 20,
         reloadTime: 2.75,
-        fireDelay: 87.5,
+        fireDelay: 87.6,
         switchDelay: 400,
         speedMultiplier: 0.92,
         recoilMultiplier: 0.65,
@@ -607,7 +640,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(110, 0) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.5)
         },
         ballistics: {
@@ -641,7 +674,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(128, 0) },
-        casingParticles: {
+        particles: {
             position: v(4.5, 1)
         },
         ballistics: {
@@ -664,7 +697,7 @@ export const Guns: GunDefinition[] = [
         fireDelay: 90,
         switchDelay: 500,
         speedMultiplier: 0.9,
-        recoilMultiplier: 0.7,
+        recoilMultiplier: 0.92,
         recoilDuration: 175,
         fireMode: FireMode.Auto,
         shotSpread: 3,
@@ -675,8 +708,8 @@ export const Guns: GunDefinition[] = [
             right: v(65, 0),
             animationDuration: 100
         },
-        image: { position: v(115, 0) },
-        casingParticles: {
+        image: { position: v(150, 0) },
+        particles: {
             position: v(5.5, 0)
         },
         ballistics: {
@@ -711,7 +744,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(100, 0) },
-        casingParticles: {
+        particles: {
             position: v(5, 0.5)
         },
         noMuzzleFlash: true,
@@ -720,8 +753,8 @@ export const Guns: GunDefinition[] = [
             obstacleMultiplier: 1,
             speed: 0.22,
             maxDistance: 160,
-            tracerOpacity: 0.5,
-            tracerLength: 1.5
+            tracerLength: 1.3,
+            tracerOpacity: 0.5
         }
     },
     {
@@ -747,15 +780,14 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(130, 0) },
-        casingParticles: {
+        particles: {
             position: v(5, 0.5)
         },
         ballistics: {
             damage: 28.5,
             obstacleMultiplier: 1.5,
             speed: 0.3,
-            maxDistance: 230,
-            tracerLength: 1.5
+            maxDistance: 230
         }
     },
     {
@@ -781,15 +813,47 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(120, 1.5) },
-        casingParticles: {
+        particles: {
             position: v(5, 0.5)
         },
         ballistics: {
             damage: 25.5,
             obstacleMultiplier: 1.5,
             speed: 0.3,
-            maxDistance: 230,
-            tracerLength: 1.5
+            maxDistance: 230
+        }
+    },
+	{
+        idString: "L86A2",
+        name: "L86A2",
+        itemType: ItemType.Gun,
+        ammoType: "556mm",
+        ammoSpawnAmount: 90,
+        capacity: 30,
+        reloadTime: 3,
+        fireDelay: 150,
+        switchDelay: 400,
+        speedMultiplier: 0.92,
+        recoilMultiplier: 0.8,
+        recoilDuration: 130,
+        fireMode: FireMode.Single,
+        shotSpread: 1,
+        moveSpread: 2.5,
+        length: 11.9,
+        fists: {
+            left: v(50, 2.5),
+            right: v(100, -2),
+            animationDuration: 100
+        },
+        image: { position: v(120, 1.5) },
+        particles: {
+            position: v(5, 0.5)
+        },
+        ballistics: {
+            damage: 26,
+            obstacleMultiplier: 0.70,
+            speed: 0.27,
+            maxDistance: 230
         }
     },
     {
@@ -822,14 +886,12 @@ export const Guns: GunDefinition[] = [
         ballistics: {
             damage: 800,
             obstacleMultiplier: 2,
-            speed: 1,
+            speed: 0.5,
             maxDistance: 400,
             penetration: {
                 players: true,
                 obstacles: true
-            },
-            tracerImage: "power_cell_trail",
-            tracerLength: 10
+            }
         }
     },
     {
@@ -859,7 +921,7 @@ export const Guns: GunDefinition[] = [
             animationDuration: 100
         },
         image: { position: v(90, 0) },
-        casingParticles: {
+        particles: {
             position: v(4, 0.6)
         },
         singleReload: true,

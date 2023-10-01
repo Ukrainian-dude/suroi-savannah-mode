@@ -2,12 +2,7 @@ import $ from "jquery";
 
 import { ReceivingPacket } from "../../types/receivingPacket";
 
-import {
-    DEFAULT_USERNAME,
-    KILL_FEED_MESSAGE_TYPE_BITS,
-    KillFeedMessageType,
-    type ObjectCategory
-} from "../../../../../common/src/constants";
+import { KILL_FEED_MESSAGE_TYPE_BITS, KillFeedMessageType, type ObjectCategory } from "../../../../../common/src/constants";
 import { type SuroiBitStream } from "../../../../../common/src/utils/suroiBitStream";
 import { type ItemDefinition } from "../../../../../common/src/utils/objectDefinitions";
 import { randomKillWord } from "../../utils/misc";
@@ -17,7 +12,7 @@ import { UI_DEBUG_MODE } from "../../utils/constants";
 
 /*
     To avoid having an overly-cluttered killfeed, we say that the fade time is
-    dependent on the amount of messages, up to a certain minimum/maximum
+    dependant on the amount of messages, up to a certain minimum/maximum
 
     Intuitively, if there's a lot of messages, they'll clear out faster than if
     there aren't that many
@@ -67,11 +62,6 @@ export class KillFeedPacket extends ReceivingPacket {
                     }
                     : undefined;
 
-                if (localStorageInstance.config.anonymousPlayers) {
-                    killed.name = DEFAULT_USERNAME;
-                    if (killedBy) killedBy.name = DEFAULT_USERNAME;
-                }
-
                 switch (true) {
                     case killed.id === this.game.activePlayerID: { // was killed
                         killFeedItem.addClass("kill-feed-item-victim");
@@ -117,7 +107,7 @@ export class KillFeedPacket extends ReceivingPacket {
             case KillFeedMessageType.Join: {
                 const name = stream.readPlayerNameWithColor();
                 const joined = stream.readBoolean();
-                killFeedItem.html(`<i class="fa-solid ${joined ? "fa-arrow-right-to-bracket" : "fa-arrow-right-from-bracket"}"></i> ${localStorageInstance.config.anonymousPlayers ? DEFAULT_USERNAME : name} ${joined ? "joined" : "left"} the game`);
+                killFeedItem.html(`<i class="fa-solid ${joined ? "fa-arrow-right-to-bracket" : "fa-arrow-right-from-bracket"}"></i> ${name} ${joined ? "joined" : "left"} the game`);
                 break;
             }
         }

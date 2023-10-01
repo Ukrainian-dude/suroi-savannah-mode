@@ -1,9 +1,5 @@
 const badWords: string[] = [
     "nigger",
-    "nigggr",
-    "nigrr",
-    "nigggrrr",
-    "n1gggr",
     "n1gger",
     "n1gg3r",
     "n!gger",
@@ -32,13 +28,7 @@ const badWords: string[] = [
     "faggot",
     "fagg0t",
     "f@ggot",
-    "f@gg0t",
-    "f4ggot",
-    "f4gg0t",
-
-    "fag",
-    "f@g",
-    "f4g"
+    "f@gg0t"
 ];
 
 export function hasBadWords(text: string): boolean {
