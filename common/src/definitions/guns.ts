@@ -723,7 +723,7 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "vss",
-        name: "VSS",
+        name: "SSZ",
         itemType: ItemType.Gun,
         ammoType: "9mm",
         ammoSpawnAmount: 60,
