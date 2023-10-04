@@ -723,13 +723,13 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "vss",
-        name: "SSZ",
+        name: "S.S.Z.",
         itemType: ItemType.Gun,
         ammoType: "9mm",
         ammoSpawnAmount: 60,
         capacity: 20,
         reloadTime: 2.15,
-        fireDelay: 140,
+        fireDelay: 134,
         switchDelay: 400,
         speedMultiplier: 0.92,
         recoilMultiplier: 0.7,
@@ -749,7 +749,7 @@ export const Guns: GunDefinition[] = [
         },
         noMuzzleFlash: true,
         ballistics: {
-            damage: 24,
+            damage: 25,
             obstacleMultiplier: 1,
             speed: 0.22,
             maxDistance: 160,
@@ -759,7 +759,7 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "sr25",
-        name: "SR-25",
+        name: "M21",
         itemType: ItemType.Gun,
         ammoType: "762mm",
         ammoSpawnAmount: 80,
@@ -773,7 +773,7 @@ export const Guns: GunDefinition[] = [
         fireMode: FireMode.Single,
         shotSpread: 2,
         moveSpread: 5,
-        length: 11.4,
+        length: 12.4,
         fists: {
             left: v(130, -6),
             right: v(65, 0),
