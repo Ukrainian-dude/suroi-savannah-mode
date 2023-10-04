@@ -306,7 +306,7 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             hitbox: new CircleHitbox(5),
             spawnHitbox: new CircleHitbox(30.1),
             rotationMode: RotationMode.Full,	
-			depth: 999
+			depth: 7
         },
 		{
             idString: "big_treem",
@@ -321,7 +321,7 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             hitbox: new CircleHitbox(8),
             spawnHitbox: new CircleHitbox(30.1),
             rotationMode: RotationMode.Full,	
-			depth: 999
+			depth: 7
         },
         {
             idString: "blueberry_bush",

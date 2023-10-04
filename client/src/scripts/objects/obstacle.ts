@@ -143,7 +143,7 @@ export class Obstacle extends GameObject<ObjectCategory.Obstacle, ObstacleDefini
                 this.container.rotation = this.rotation;
                 this.container.scale.set(this.scale);
 
-                this.game.particleManager.spawnParticles(10, () => ({
+                this.game.particleManager.spawnParticles(50, () => ({
                     frames: this.particleFrames,
                     position: this.hitbox.randomPoint(),
                     depth: (definition.depth ?? 0) + 1,
