@@ -134,6 +134,86 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
         ]
     },
     {
+        idString: "big_roq",
+        name: "Porta Potty",
+        spawnHitbox: new RectangleHitbox(v(-60, -60), v(60, 60)),
+        ceilingHitbox: new ComplexHitbox([]),
+        scopeHitbox: new ComplexHitbox([]),
+        floorImages: [{
+            key: "nothing",
+            position: v(0, 0)
+        }],
+        ceilingImages: [{
+            key: "nothing",
+            position: v(1024, 1024),
+            residue: "nothing"
+        }],
+        wallsToDestroy: 69,
+        floors: [
+            {
+                type: "wood",
+                hitbox: new RectangleHitbox(v(-7, -9), v(7, 9))
+            }
+        ],
+        obstacles: [
+            {
+                id: "big_rockb",
+                position: v(0, 0),
+                rotation: 0
+            },
+            {
+                id: "oak_tree",
+                position: v(50, 50),
+                rotation: 2
+            },	
+            {
+                id: "oak_tree",
+                position: v(38, -57),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(10, -57),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(-9, -55),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(-10, 57),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(9, 55),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(57, -10),
+                rotation: 2
+            },	
+            {
+                id: "flint_crate",
+                position: v(55, 9),
+                rotation: 2
+            },				
+            {
+                id: "oak_tree",
+                position: v(-54, -57),
+                rotation: 2
+            },				
+            {
+                id: "oak_tree",
+                position: v(-47, 51),
+                rotation: 2
+            }				
+        ]
+    },	
+    {
         idString: "hunting_perch",
         name: "Hunting Perch",
         spawnHitbox: new RectangleHitbox(v(-20, -22), v(20, 22)),

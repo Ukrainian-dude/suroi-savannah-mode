@@ -228,7 +228,21 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             hitbox: new CircleHitbox(12),
             spawnHitbox: new CircleHitbox(25),
             rotationMode: RotationMode.Full,
-        },	
+        },
+        {
+            idString: "big_rockb",
+            name: "big Rock",
+            material: "stone",
+            health: 1200,
+            scale: {
+                spawnMin: 1,
+                spawnMax: 1,
+                destroy: 0.95
+            },
+            hitbox: new CircleHitbox(52),
+            spawnHitbox: new CircleHitbox(90),
+            rotationMode: RotationMode.Full,
+        },			
         {
             idString: "big_rockm",
             name: "big Rock but for map wtf suroi ur code is retarded",

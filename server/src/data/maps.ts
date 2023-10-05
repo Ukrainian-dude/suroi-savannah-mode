@@ -51,6 +51,7 @@ export const Maps: Record<string, MapDefinition> = {
         height: 888,
         buildings: {
             refinery: 0,
+			big_roq: 1,
             warehouse: 3,
             house: 0,
             porta_potty: 6,
@@ -72,7 +73,7 @@ export const Maps: Record<string, MapDefinition> = {
             gold_rock: 2,
 			big_treem: 10,
             flint_stone: 1,
-			big_rockm: 7,
+			big_rockm: 0,
 			savannahbarrel: 50
         },
         specialObstacles: {
@@ -92,7 +93,7 @@ export const Maps: Record<string, MapDefinition> = {
             { name: "Solemm Scavaging", position: v(0.14, 0.12) },
             { name: "Takedown Turf", position: v(0.14, 0.88) },
             { name: "Washed Windwalk", position: v(0.88, 0.12) },
-            { name: "Martydom Mayhem", position: v(0.82, 0.88) },
+            { name: "Hinterland", position: v(0.82, 0.88) },
             { name: "Closer Cleves", position: v(0.5, 0.3) },
             { name: "Spongebob", position: v(0.5, 0.7) }
         ]
