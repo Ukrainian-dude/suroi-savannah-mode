@@ -173,16 +173,16 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
             },	
             {
                 id: "flint_crate",
-                position: v(10, -57),
+                position: v(9, -57),
                 rotation: 2
             },	
             {
-                id: "flint_crate",
+                id: "aegis_crate",
                 position: v(-9, -55),
                 rotation: 2
             },	
             {
-                id: "flint_crate",
+                id: "regular_crate",
                 position: v(-10, 57),
                 rotation: 2
             },	
@@ -192,18 +192,23 @@ export const Buildings = new ObjectDefinitions<BuildingDefinition>([
                 rotation: 2
             },	
             {
-                id: "flint_crate",
+                id: "regular_crate",
                 position: v(57, -10),
                 rotation: 2
             },	
             {
-                id: "flint_crate",
+                id: "regular_crate",
                 position: v(55, 9),
                 rotation: 2
             },				
             {
                 id: "oak_tree",
                 position: v(-54, -57),
+                rotation: 2
+            },	
+            {
+                id: "oak_tree",
+                position: v(12, -57),
                 rotation: 2
             },				
             {

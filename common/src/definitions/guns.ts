@@ -367,7 +367,7 @@ export const Guns: GunDefinition[] = [
             position: v(4, 0.6)
         },
         ballistics: {
-            damage: 34,
+            damage: 41,
             obstacleMultiplier: 1,
             speed: 0.30,
             maxDistance: 250,
@@ -377,7 +377,7 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "tango_51",
-        name: "Tango 51",
+        name: "M24 SWS",
         itemType: ItemType.Gun,
         ammoType: "762mm",
         ammoSpawnAmount: 20,
@@ -479,7 +479,7 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "saf_200",
-        name: "SAF-200",
+        name: "Colt M635",
         itemType: ItemType.Gun,
         ammoType: "9mm",
         ammoSpawnAmount: 90,
@@ -723,7 +723,7 @@ export const Guns: GunDefinition[] = [
     },
     {
         idString: "vss",
-        name: "S.S.Z.",
+        name: "S.S.Z",
         itemType: ItemType.Gun,
         ammoType: "9mm",
         ammoSpawnAmount: 60,
