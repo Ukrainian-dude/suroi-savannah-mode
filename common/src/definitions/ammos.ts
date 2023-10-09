@@ -15,7 +15,7 @@ export interface AmmoDefinition extends ItemDefinition {
 export const Ammos: AmmoDefinition[] = [
     {
         idString: "12g",
-        name: "12 gauge",
+        name: ".45 ACP",
         itemType: ItemType.Ammo
     },
     {
