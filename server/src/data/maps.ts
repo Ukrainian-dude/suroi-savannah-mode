@@ -50,7 +50,7 @@ export const Maps: Record<string, MapDefinition> = {
         width: 888,
         height: 888,
         buildings: {
-            refinery: 0,
+            refinery: 1,
 			big_roq: 1,
             warehouse: 3,
             house: 0,

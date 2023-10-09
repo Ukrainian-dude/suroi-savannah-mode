@@ -302,6 +302,43 @@ export const Guns: GunDefinition[] = [
             tracerLength: 2.5
         }
     },
+    {
+        idString: "model_94",
+        name: "Model 94",
+        itemType: ItemType.Gun,
+        ammoType: "12g",
+        ammoSpawnAmount: 64,
+        capacity: 8,
+        reloadTime: 0.5,
+        singleReload: true,
+        fireDelay: 900,
+        switchDelay: 900,
+        speedMultiplier: 0.9,
+        recoilMultiplier: 0.45,
+        recoilDuration: 750,
+        fireMode: FireMode.Single,
+        shotSpread: 0.8,
+        moveSpread: 0.5,
+        canQuickswitch: true,
+        length: 11,
+        fists: {
+            left: v(145, -1),
+            right: v(65, 0),
+            animationDuration: 100
+        },
+        image: { position: v(105, 4) },
+        particles: {
+            position: v(4, 0.6)
+        },
+        ballistics: {
+            damage: 49.99999999999996999,
+            obstacleMultiplier: 1,
+            speed: 0.33,
+            maxDistance: 250,
+            tracerWidth: 1.4,
+            tracerLength: 2.5
+        }
+    },	
 	{
         idString: "blr",
         name: "BLR 81",
