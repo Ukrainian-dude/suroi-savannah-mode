@@ -615,10 +615,6 @@ export const Guns: GunDefinition[] = [
             obstacleMultiplier: 1.5,
             speed: 0.3,
             maxDistance: 180
-        },
-        burstProperties: {
-            shotsPerBurst: 3,
-            burstCooldown: 400
         }
     },
     {
