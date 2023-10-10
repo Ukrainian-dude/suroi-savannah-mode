@@ -7,7 +7,7 @@ export const news: NewsPost[] = [
         date: 1694706686000,
         author: "Playback1988/11/06.mp4",
         title: "Burning.",
-        bannerImage: "./img/news/v0.11.0.png",
+        bannerImage: "./img/news/v0.12.0.png",
         content: `"You DO understand that this may aggrevate the German claims, correct?"<br><br>
 
 "I know that's what the presidents avoiding, but we have to protect our allies claims abroad. Spain is an important ally in a hostile Europe."<br><br>
