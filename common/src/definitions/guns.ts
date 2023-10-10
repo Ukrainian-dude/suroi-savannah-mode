@@ -515,6 +515,39 @@ export const Guns: GunDefinition[] = [
         }
     },
     {
+        idString: "peacemaker",
+        name: "Peacemaker",
+        itemType: ItemType.Gun,
+        ammoType: "12g",
+        ammoSpawnAmount: 64,
+        fireDelay: 150,
+        switchDelay: 250,
+        speedMultiplier: 0.92,
+        recoilMultiplier: 0.8,
+        recoilDuration: 90,
+        fireMode: FireMode.Auto,
+        shotSpread: 16,
+        moveSpread: 16,
+        length: 6.7,
+        fists: {
+            left: v(70, 4),
+            right: v(65, 0),
+            animationDuration: 100
+        },
+        image: { position: v(58, 0) },
+        particles: {
+            position: v(3.5, 0.5)
+        },
+        capacity: 6,
+        reloadTime: 3,
+        ballistics: {
+            damage: 29,
+            obstacleMultiplier: 1,
+            speed: 0.22,
+            maxDistance: 85
+        }
+    },	
+    {
         idString: "saf_200",
         name: "Colt M635",
         itemType: ItemType.Gun,

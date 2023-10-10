@@ -5,6 +5,31 @@ export const news: NewsPost[] = [
 
  {
         date: 1694706686000,
+        author: "Playback1988/11/06.mp4",
+        title: "Burning.",
+        bannerImage: "./img/news/v0.11.0.png",
+        content: `"You DO understand that this may aggrevate the German claims, correct?"<br><br>
+
+"I know that's what the presidents avoiding, but we have to protect our allies claims abroad. Spain is an important ally in a hostile Europe."<br><br>
+
+The ever loyal, but disatisfied Lieutenant decides to take up the Field Marshals deciscion.<br><br>
+
+"I suppose you raise a point. When do we start planning the landing?"<br><br>
+
+"Tomorrow, those damned Germans arent going to get an ACRE of land!"`,
+        longContent: `<h2>re-savannah mode v0.3.0</h2>
+
+<h3>New features & changes</h3>
+Hi.<ul>
+
+  <li>Check the changelog you nerd </li>
+</ul>
+
+Special thanks (once again) to Ukraines dude and Jason, we made this thing lol`
+    },
+
+ {
+        date: 1694706686000,
         author: "Ukraines dude",
         title: "Return to form",
         bannerImage: "./img/news/v0.11.0.png",
@@ -13,10 +38,10 @@ export const news: NewsPost[] = [
 Also smaller island lol<br><br>
 
 And finally, the flint stone drops loot now :) (30X IS NOT CLICKBAIT FINALLY)`,
-        longContent: `<h2>re-savannah mode v0.1.0</h2>
+        longContent: `<h2>re-savannah mode v0.2.0</h2>
 
 <h3>New features & changes</h3>
-<ul>
+<ul>	
   <li>Check the changelog you nerd </li>
 </ul>
 
@@ -28,7 +53,8 @@ Special thanks (once again) to Ukraines dude and Jason, we made this thing lol`
         author: "H.A.Z.E.L",
         title: "Broadening our horizons",
         bannerImage: "./img/news/v0.10.0.png",
-        content: `We here at H.A.Z.E.L have broadened our horizons, and expanded operations to a new island! DMR's and snipers reign supreme in the savannah! But settlement operations have been delayed... indefinitely. Which leads to houses being an impossible find here...<br><br>
+        content: `NOTE: The following news paragraph isnt canon (anymore at least lol) <br><br> 
+		We here at H.A.Z.E.L have broadened our horizons, and expanded operations to a new island! DMR's and snipers reign supreme in the savannah! But settlement operations have been delayed... indefinitely. Which leads to houses being an impossible find here...<br><br>
 
 We've also began experimenting with a new, lighter form of transporting oil, the propane tank! These tiny barrels are convenient for transporting oil due to the scarcity of oil on this island. But their smaller size means they could theoretically be exploded much easier than regular barrels...<br><br>
 

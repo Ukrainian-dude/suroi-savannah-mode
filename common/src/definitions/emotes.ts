@@ -106,11 +106,11 @@ export const Emotes = new ObjectDefinitions<EmoteDefinition>(
         },
         {
             idString: "aegis_logo",
-            name: "AEGIS Logo"
+            name: "OFN logo"
         },
         {
             idString: "flint_logo",
-            name: "Flint Logo"
+            name: "EHP logo"
         },
         {
             idString: "gg",
