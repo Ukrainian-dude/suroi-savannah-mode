@@ -47,47 +47,47 @@ interface MapDefinition {
 
 export const Maps: Record<string, MapDefinition> = {
     main: {
-        width: 888,
-        height: 888,
+        width: 848,
+        height: 848,
         buildings: {
-            refinery: 1,
-			big_roq: 1,
+            refinery: 0,
+			big_roq: 0,
             warehouse: 3,
             house: 0,
-            porta_potty: 6,
-			hunting_perch: 11	,
+            porta_potty: 5,
+			hunting_perch: 10	,
 			Kopje: 3
         },
         obstacles: {
-            regular_crate: 65,
-            oak_tree: 60,
+            regular_crate: 55,
+            oak_tree: 40,
             pine_tree: 0,
             birch_tree: 0,
-            rock: 100,
-            big_bush: 50,
-			bush: 30,
+            rock: 80,
+            big_bush: 30,
+			big_rock: 2,
+			big_tree: 3,
+			bush: 10,
             blueberry_bush: 0,
-            barrel: 50,
-            super_barrel: 16,
+            barrel: 25,
+            super_barrel: 10,
             melee_crate: 1,
             gold_rock: 2,
-			big_treem: 10,
-            flint_stone: 1,
-			big_rockm: 0,
-			savannahbarrel: 50
+            flint_stone: 0,
+			savannahbarrel: 30
         },
         specialObstacles: {
             aegis_crate: {
-                min: 3,
-                max: 4
+                min: 2,
+                max: 2
             },
             flint_crate: {
                 min: 3,
-                max: 4
+                max: 6
             }
         },
         loots: {
-            ground_loot: 40
+            ground_loot: 70
         },
         places: [
             { name: "Solemm Scavaging", position: v(0.14, 0.12) },

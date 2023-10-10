@@ -221,12 +221,12 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             material: "stone",
             health: 700,
             scale: {
-                spawnMin: 5,
-                spawnMax: 5,
+                spawnMin: 1,
+                spawnMax: 1,
                 destroy: 0.95
             },
-            hitbox: new CircleHitbox(12),
-            spawnHitbox: new CircleHitbox(25),
+            hitbox: new CircleHitbox(24),
+            spawnHitbox: new CircleHitbox(100),
             rotationMode: RotationMode.Full,
         },
         {
@@ -242,21 +242,7 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             hitbox: new CircleHitbox(52),
             spawnHitbox: new CircleHitbox(90),
             rotationMode: RotationMode.Full,
-        },			
-        {
-            idString: "big_rockm",
-            name: "big Rock but for map wtf suroi ur code is retarded",
-            material: "stone",
-            health: 700,
-            scale: {
-                spawnMin: 2.5,
-                spawnMax: 2.5,
-                destroy: 2
-            },
-            hitbox: new CircleHitbox(5),
-            spawnHitbox: new CircleHitbox(6.75),
-            rotationMode: RotationMode.Full,
-        },				
+        },							
         {
             idString: "flint_stone",
             name: "Flint Stone",
@@ -313,27 +299,12 @@ export const Obstacles = new ObjectDefinitions<ObstacleDefinition>(
             material: "tree",
             health: 500,
             scale: {
-                spawnMin: 0.5,
-                spawnMax: 0.5,
+                spawnMin: 1,
+                spawnMax: 1,
                 destroy: 0.65
             },
-            hitbox: new CircleHitbox(5),
-            spawnHitbox: new CircleHitbox(30.1),
-            rotationMode: RotationMode.Full,	
-			depth: 7
-        },
-		{
-            idString: "big_treem",
-            name: "big tree that spawns around the map",
-            material: "tree",
-            health: 500,
-            scale: {
-                spawnMin: 0.7,
-                spawnMax: 0.7,
-                destroy: 0.65
-            },
-            hitbox: new CircleHitbox(8),
-            spawnHitbox: new CircleHitbox(30.1),
+            hitbox: new CircleHitbox(6),
+            spawnHitbox: new CircleHitbox(15),
             rotationMode: RotationMode.Full,	
 			depth: 7
         },

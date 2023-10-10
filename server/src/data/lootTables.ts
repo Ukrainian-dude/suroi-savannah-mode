@@ -31,7 +31,7 @@ export const LootTables: Record<string, LootTable> = {
         min: 3,
         max: 5,
         loot: [
-            { tier: "special_guns", weight: 1 },
+            { tier: "OFN_guns", weight: 1 },
             { tier: "special_healing_items", weight: 0.15 },
             { tier: "special_equipment", weight: 0.65 },
             { tier: "special_scopes", weight: 0.3 }
@@ -41,7 +41,7 @@ export const LootTables: Record<string, LootTable> = {
         min: 3,
         max: 5,
         loot: [
-            { tier: "special_guns", weight: 1 },
+            { tier: "GER_guns", weight: 1 },
             { tier: "special_equipment", weight: 0.65 },
             { tier: "special_healing_items", weight: 0.15 },
             { tier: "special_scopes", weight: 0.3 }
@@ -288,6 +288,25 @@ export const LootTiers: Record<string, WeightedLoot[]> = {
         { item: "mosin", weight: 0.5 },
         { item: "tango_51", weight: 0.05 }
     ],
+    GER_guns: [
+        { item: "micro_uzi", weight: 0.50 },
+        { item: "mp40", weight: 0.50 },
+        { item: "vss", weight: 0.59 },
+        { item: "sr25", weight: 0.20 },    	
+		{ item: "svd", weight: 0.5 },
+		{ item: "L86A2", weight: 0.5 },
+        { item: "mini14", weight: 0.20 },
+        { item: "mosin", weight: 0.7 },
+    ],	
+    OFN_guns: [
+        { item: "saf_200", weight: 0.50 },
+        { item: "g19", weight: 0.000000001 },
+        { item: "sr25", weight: 0.69 },    	
+		{ item: "L86A2", weight: 0.5 },
+        { item: "mini14", weight: 0.69 },
+        { item: "mosin", weight: 0.4 },
+        { item: "tango_51", weight: 0.05 }
+    ],	
     special_healing_items: [
         { item: "cola", weight: 3 },
         { item: "tablets", weight: 1 },

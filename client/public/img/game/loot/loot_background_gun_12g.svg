@@ -25,9 +25,9 @@
      inkscape:document-units="px"
      showgrid="false"
      units="px"
-     inkscape:zoom="0.70710681"
-     inkscape:cx="-451.84121"
-     inkscape:cy="71.417782"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="99.348499"
+     inkscape:cy="211.77847"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -42,7 +42,7 @@
          style="stop-color:#ffffff;stop-opacity:0.8509804"
          offset="0"
          id="stop2552" /><stop
-         style="stop-color:#5600b1;stop-opacity:1;"
+         style="stop-color:#3d007c;stop-opacity:0.72121215;"
          offset="1"
          id="stop2554" /></linearGradient><radialGradient
        inkscape:collect="always"
@@ -58,7 +58,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><circle
-       style="fill:url(#radialGradient1580);fill-opacity:1;stroke:#1e0036;stroke-width:1.58752;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:url(#radialGradient1580);fill-opacity:1;stroke:#45007d;stroke-width:1.58752;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="path1046"
        cx="17.859377"
        cy="17.859377"
